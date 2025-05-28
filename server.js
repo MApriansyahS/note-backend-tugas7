@@ -13,7 +13,7 @@ const port = process.env.PORT || 5000;
 
 const corsOptions = {
   origin: [
-    "http://localhost:3000", 
+    "https://notes-frontend-dot-xenon-axe-450704-n3.uc.r.appspot.com/", 
   ],
   credentials: true, 
   methods: ["GET", "POST", "PUT", "DELETE"],
