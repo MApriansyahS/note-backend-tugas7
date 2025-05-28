@@ -8,8 +8,6 @@ import cookieParser from "cookie-parser";
 dotenv.config(); 
 
 const app = express();
-const port = process.env.PORT || 5000;
-
 
 const corsOptions = {
   origin: [
@@ -34,6 +32,7 @@ app.use((err, req, res, next) => {
   res.status(500).json({ message: "Terjadi kesalahan pada server" });
 });
 
+const port = process.env.PORT || 5000;
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
