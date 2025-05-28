@@ -1,0 +1,74 @@
+# Register User
+POST http://localhost:5000/register
+Content-Type: application/json
+
+{
+  "username": "newuser",
+  "password": "password123",
+  "confirm_password": "password123"
+}
+
+###
+
+# Login User
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+  "username": "newuser",
+  "password": "password123"
+}
+
+###
+
+# Refresh Token (untuk mendapatkan Access Token baru)
+GET http://localhost:5000/token
+Cookie: refreshToken=<your_refresh_token>
+
+###
+
+# Logout User
+DELETE http://localhost:5000/logout
+Cookie: refreshToken=<your_refresh_token>
+
+###
+
+# Get All Notes
+GET http://localhost:5000/notes
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJuZXd1c2VyIiwiaWF0IjoxNzQ4MTYxNDQ0LCJleHAiOjE3NDgxNjMyNDR9.BdGlEPgRAhSR3S3PcWBj3YxQNDVay9ZYZHsKh7HnCHo
+
+###
+
+# Get Note by ID
+GET http://localhost:5000/notes/{noteId}
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJuZXd1c2VyIiwiaWF0IjoxNzQ4MTYxNDQ0LCJleHAiOjE3NDgxNjMyNDR9.BdGlEPgRAhSR3S3PcWBj3YxQNDVay9ZYZHsKh7HnCHo
+
+###
+
+# Create Note
+POST http://localhost:5000/add-note
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJuZXd1c2VyIiwiaWF0IjoxNzQ4MTYxNDQ0LCJleHAiOjE3NDgxNjMyNDR9.BdGlEPgRAhSR3S3PcWBj3YxQNDVay9ZYZHsKh7HnCHo
+Content-Type: application/json
+
+{
+  "title": "Note Title",
+  "content": "This is the content of the note."
+}
+
+###
+
+# Update Note
+PUT http://localhost:5000/update-note/{noteId}
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJuZXd1c2VyIiwiaWF0IjoxNzQ4MTYxNDQ0LCJleHAiOjE3NDgxNjMyNDR9.BdGlEPgRAhSR3S3PcWBj3YxQNDVay9ZYZHsKh7HnCHo
+Content-Type: application/json
+
+{
+  "title": "Updated Note Title",
+  "content": "This is the updated content of the note."
+}
+
+###
+
+# Delete Note
+DELETE http://localhost:5000/delete-note/{noteId}
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJuZXd1c2VyIiwiaWF0IjoxNzQ4MTYxNDQ0LCJleHAiOjE3NDgxNjMyNDR9.BdGlEPgRAhSR3S3PcWBj3YxQNDVay9ZYZHsKh7HnCHo
