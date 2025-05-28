@@ -7,16 +7,19 @@ steps:
 
   - name: 'gcr.io/cloud-builders/gcloud'
     args:
-    [
-      'run', 'deploy', 'notes-backend',
-      '--image', 'gcr.io/$PROJECT_ID/notes-backend',
-      '--region', 'us-central1',
-      '--platform', 'managed',
-      '--allow-unauthenticated',
-      '--set-env-vars', 'DB_HOST=104.154.160.164,DB_USER=root,DB_PASS=,DB_NAME=notes_db,PORT=5000,ACCESS_TOKEN_SECRET=TokenRahasia,REFRESH_TOKEN_SECRET=TokenRahasia',
-      '--quiet'
-    ]
-
+      - 'run'
+      - 'deploy'
+      - 'notes-backend'
+      - '--image'
+      - 'gcr.io/$PROJECT_ID/notes-backend'
+      - '--region'
+      - 'us-central1'
+      - '--platform'
+      - 'managed'
+      - '--allow-unauthenticated'
+      - '--set-env-vars'
+      - 'DB_HOST=104.154.160.164,DB_USER=root,DB_PASS=,DB_NAME=notes_db,PORT=5000,ACCESS_TOKEN_SECRET=TokenRahasia,REFRESH_TOKEN_SECRET=TokenRahasia'
+      - '--quiet'
 
 options:
   logging: CLOUD_LOGGING_ONLY
